@@ -12,7 +12,7 @@
 <section class="blackscreen"></section>
 <!--Game Screen-->
 <section class="mainmenu" id="mainmenu">
-    <h1 class="titlename">Game Title</h1>
+    <h1 class="titlename">Dungeon Hunter</h1>
     <button class="button" onclick="" id="start">Start Game</button><br>
     <button class="button"  id="optbut">Options</button>
     <button onclick="abouttog()" class="button" id="aboutbtn">About</button>
@@ -40,24 +40,24 @@
 
 <!--About-->
 <section id="aboutbox">
-    <p>I have no idea what I'm doing and will probably fail.</p>
+    <p>Insert About Here</p>
 </section>
 <!--Main Game-->
 <section class="maingame">
     <div class="navbar">
         <button class="button" onclick="restart()">Restart</button>
         <div class="dropdown">
-            <button onclick="dropfunc()" class="dropbtn">Options</button>
+            <!-- <button onclick="dropfunc()" class="dropbtn">Options</button>
             <div id="bardrop" class="dropdown-content">
                 <a href="">Text Visibility</a>
                 <a href="">Colourblind Mode</a>
                 <a href="">Options Menu</a>
-            </div>
+            </div> -->
         </div>
-        <button class="button">Credits</button>
     </div>
     <div id="nameinput">
         <form>
+            <h3>In this game, the items and equipment you have found will shape the outcome of your battles. Ensure you are well equipped...</h3>
             <h3>What is your name, Adventurer?</h3>
             <p>I am...</p>
             <input type="text" id="nametext"></input>
@@ -69,7 +69,7 @@
         <section>
             <img src="maptest.png" usemap="#mapstart">
             <map name="mapstart">
-                <area shape="rect" coords="140, 48, 186, 0" onclick="randomcol()" />
+                <area id="chest1" shape="rect" coords="140, 48, 186, 0" onclick="randomcol()" />
             </map>
         </section>
         <audio id="ambience" src="ambient.mp3"></audio>
