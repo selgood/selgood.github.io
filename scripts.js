@@ -26,15 +26,65 @@ function walkaway() {
 /* LAMP ROUTE*/
 /* Turn on Lamp*/
 function lampon() {
-    setTimeout(function(){ document.getElementById("p2").innerHTML = "You turn the lamp on and it lights up the room around you, exposing the beady, yellow eyes of dozens of gazes burning into you, darting around your form and around the room."; }, 3000);
-    setTimeout(function(){ document.getElementById("button").innerHTML = "Start Again?"; }, 3000);
-    setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
-    setTimeout(function(){ document.getElementById("lamp").innerHTML = "Game Over"; }, 3000);
-    setTimeout(function(){ document.getElementById("lamp").onclick = function() {restart()}; }, 3000);
+    setTimeout(function(){ document.getElementById("p2").innerHTML = "You turn the lamp on and it lights up the room around you, exposing the beady, yellow eyes of dozens of gazes burning into you, darting around your form and around the room. Something darts at you to attack."; }, 3000);
+    setTimeout(function(){ document.getElementById("button").innerHTML = "Attempt to Defend"; }, 3000);
+    setTimeout(function(){ document.getElementById("button").onclick = function() {defend()}; }, 3000);
+    setTimeout(function(){ document.getElementById("lamp").innerHTML = "Attempt to Attack"; }, 3000);
+    setTimeout(function(){ document.getElementById("lamp").onclick = function() {attack()}; }, 3000);
 }
-/* Kick Lamp*/
+
+function attack() {
+    if (inventoryI.includes("Sword")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "As the creature lunges, you use the sword you found and retaliate, cutting the armoured beetle down swiftly."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    } else if (inventoryI.includes("Shield")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You dance backwards and raise your shield, holding it steady as the creature slams into it, dropping onto the floor and scurrying away quickly."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    } else {
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You raise your hands and attempt to fight back, throwing a punch to the air but missing spectacularly, a sudden gashing pain searing across your face, leaving your cheek dripping blood."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    }
+
+    
+}
+
+function defend() {
+    if (inventoryI.includes("Sword")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "As the creature lunges, you use the sword you found and defend, you manage to defelct the incoming monster and injure it as it hits the ground, escaping quickly."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    } else if (inventoryI.includes("Shield")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You dance backwards and raise your shield, holding it steady as the creature slams into it, dropping onto the floor and scurrying away quickly."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    } else {
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You raise your hands and attempt to fight back, throwing a punch to the air but missing spectacularly, a sudden gashing pain searing across your face, leaving your cheek dripping blood."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "Chase after the creature."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "Retreat and look for a way out."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+    }
+
+    
+}
+
+
+/* Kick Lamp (END)*/
 function kicklamp() {
-    setTimeout(function(){ document.getElementById("p2").innerHTML = "You kick the lamp over and it breaks, a quiet hiss could be heard as the bulb smashes across the scratched floor, almost as if the light had been containing something, and you'd just let it go free."; }, 3000);
+    setTimeout(function(){ document.getElementById("p2").innerHTML = "You kick the lamp over and it breaks, a quiet hiss could be heard as the bulb smashes across the scratched floor, almost as if the light had been containing something, and you'd just let it go free. The room goes dark, you cannot find a way out."; }, 3000);
     setTimeout(function(){ document.getElementById("button").innerHTML = "Start Again?"; }, 3000);
     setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
     setTimeout(function(){ document.getElementById("lamp").innerHTML = "Game Over"; }, 3000);
@@ -45,7 +95,9 @@ function kicklamp() {
 function restart() {
     location.reload()
 }
+function nothing(){
 
+}
 
 /*Set Small Font*/
 function smallfont() {
@@ -203,13 +255,14 @@ var possinv = [
 ]
 console.log(window.inventoryI)
 function randomcol(number){
+    document.getElementById("chest1").onclick = function() {nothing()};
     var number = 0
     number = Math.floor(Math.random() * possinv.length)
     console.log(number)
     var item = possinv[number] 
     window.alert("You found "+ item +", item was added to your inventory.")
     inventoryI.push(item);
-    console.log(inventoryI)
+    
 }
 
 function inventory(){
