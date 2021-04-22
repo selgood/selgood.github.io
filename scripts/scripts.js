@@ -298,10 +298,6 @@ $(document).ready(function(){
     $(".nameinput").fadeOut(1)
 });
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content
-https://www.w3schools.com/howto/howto_js_dropdown.asp */
-
 /* PLAYER STATS */
 var playername=""
 /*Set name and start audio*/
