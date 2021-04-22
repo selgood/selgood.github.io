@@ -1,0 +1,104 @@
+.maingame{
+    background-color: #a7a7a7; 
+    color: black; 
+    font-weight: bold;
+    display: flex ;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: center ;
+    align-items: center ;
+    align-content: center ;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+/*Help centering items*/
+.centerthis{
+    margin: auto;
+    display: inline-block;
+}
+
+.button{
+    background: grey;
+    padding: 10px 24px;
+    width: 200px;
+    border-color: black;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+}
+
+.clsbutton{
+  background: rgb(236, 20, 20);
+  padding: 10px 24px;
+  width: 200px;
+  border-color: black;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-weight: bold;
+}
+
+.buttondrop{
+  background: grey;
+  padding: 10px 24px;
+  width: 200px;
+  border-color: black;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-weight: bold;
+}
+
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+.story {
+    width: 500px;
+}
+/*Normal CSS*/
+
+.navbar {
+  background: rgb(82, 82, 82);
+  width: 300px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  
+}
+
+#gvisibility {
+  visibility: hidden;
+}
+
+.mainmenu {
+  font-size: 50px;
+  text-align: center;
+  padding-bottom: 150px;
+  position: fixed;
+}
+
+.blackscreen{
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  background-color: black;
+  visibility: hidden;
+}
+
+
+.optionsmenu {
+  padding-top: 450px;
+  position: fixed;
+  text-align: center;
+}
+
+#aboutbox {
+  position: fixed;
+  padding-top: 230px;
+  padding-left: 380px;
+  pointer-events: none;
+  display: none;
+}

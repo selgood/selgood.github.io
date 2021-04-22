@@ -2,8 +2,8 @@
 <html>
 <header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="scripts.js"></script>
-<link rel="stylesheet" href="page.css" type="text/css"/>
+<script src="scripts/scripts.js"></script>
+<link rel="stylesheet" href="css/page.css" type="text/css"/>
 <title>Choose your Path</title>
 </header>
 
@@ -61,14 +61,14 @@
     <div id="div3">
         <p>Welcome, <span id="namepos"></span></p>
         <section>
-            <img id ="map" src="maptest.png" usemap="#mapstart">
+            <img id ="map" src="maps/maptest.png" usemap="#mapstart">
             <map name="mapstart">
                 <area id="chest1" shape="rect" coords="140, 48, 186, 0" onclick="randomcol()" />
                 <area id="coinsfloor" shape="rect" coords="276, 179, 310, 215" onclick="nothing()" />
                 <area id="lantern" shape="rect" coords="143, 83, 187, 135" onclick="nothing()" />
             </map>
         </section>
-        <audio loop id="ambience" src="ambient.mp3"></audio>
+        <audio loop id="ambience" src="sounds/ambient.mp3"></audio>
         <p id="p2" class="story">You are standing in front of a wooden door, the door has a large
         sign that says; "DO NOT ENTER, DANGER OF DEATH!". The wooden door has small 
         cracks and splits in between the boards, and a mangled bronze doorknob that
