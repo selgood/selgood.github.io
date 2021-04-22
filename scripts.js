@@ -35,6 +35,7 @@ function lampon() {
     setTimeout(function(){ document.getElementById("lamp").onclick = function() {attack()}; }, 3000);
 }
 
+/*First encounter*/
 function attack() {
     if (inventoryI.includes("Sword")){
         setTimeout(function(){ document.getElementById("p2").innerHTML = "As the creature lunges, you use the sword you found and retaliate, cutting the armoured beetle down swiftly."; }, 3000);
@@ -105,12 +106,47 @@ function chase() {
     }
 }
 
+/*Pivot 1*/
 function wayout() {
     setTimeout(function(){ document.getElementById("p2").innerHTML = "You sit up and look around the now lit room- curiously you see a doorway at one end of the room with a dark hall. On one side of the wall is a man-sized hole."; }, 3000);
-    setTimeout(function(){ document.getElementById("button").innerHTML = "Walk down the hall. WIP"; }, 3000);
-    setTimeout(function(){ document.getElementById("button").onclick = function() {nothing()}; }, 3000);
-    setTimeout(function(){ document.getElementById("lamp").innerHTML = "Inspect the hole in the wall. WIP"; }, 3000);
+    setTimeout(function(){ document.getElementById("button").innerHTML = "Walk down the hall."; }, 3000);
+    setTimeout(function(){ document.getElementById("button").onclick = function() {hallway()}; }, 3000);
+    setTimeout(function(){ document.getElementById("lamp").innerHTML = "Inspect the hole in the wall."; }, 3000);
     setTimeout(function(){ document.getElementById("lamp").onclick = function() {nothing()}; }, 3000);
+}
+
+/*Hallway Ending */
+function hallway() {
+    if (inventoryI.includes("Lantern")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You walk down the darkened hallway, illuminating the way with your lantern clipped to your hip. The walls are covered in some goopy liquid, and the smell of rot is pungent in your nose."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {restart()}; }, 3000);
+    } else {
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You step into the dark hallway, running your hand on the walls to find your way, only to feel a sickly, cold liquid dribble over your hand and arm. It stings."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {restart()}; }, 3000);
+    }
+}
+
+/*Hallway Ending*/
+function holewall() {
+    if (inventoryI.includes("Lantern")){
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You inspect the hole in the wall, shining the lantern into the hole and inspecting the walls, which have the slick ooze of some black goo. You could hear the scuttling of sounds deep inside. Something lurks."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {restart()}; }, 3000);
+    } else {
+        setTimeout(function(){ document.getElementById("p2").innerHTML = "You look into the hole, but see very little... there is not much to see without a light source..."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").innerHTML = "You could continue - but the story ends here for now."; }, 3000);
+        setTimeout(function(){ document.getElementById("lamp").onclick = function() {restart()}; }, 3000);
+    }
 }
 
 function inspectbeetle() {
@@ -147,7 +183,7 @@ function hold(){
 
 /* Kick Lamp (END)*/
 function kicklamp() {
-    setTimeout(function(){ document.getElementById("p2").innerHTML = "You kick the lamp over and it breaks, a quiet hiss could be heard as the bulb smashes across the scratched floor, almost as if the light had been containing something, and you'd just let it go free. The room goes dark, you cannot find a way out."; }, 3000);
+    setTimeout(function(){ document.getElementById("p2").innerHTML = "You kick the lantern over and it breaks, a quiet hiss could be heard as the bulb smashes across the scratched floor, almost as if the light had been containing something, and you'd just let it go free. The room goes dark, you cannot find a way out."; }, 3000);
     setTimeout(function(){ document.getElementById("button").innerHTML = "Start Again?"; }, 3000);
     setTimeout(function(){ document.getElementById("button").onclick = function() {restart()}; }, 3000);
     setTimeout(function(){ document.getElementById("lamp").innerHTML = "Game Over"; }, 3000);
@@ -198,6 +234,7 @@ function abouttog() {
 }
 
 /*Fading in and out scripts, templates from https://www.w3schools.com/jquery/jquery_fade.asp*/
+/*These are used to control aspects fading in and out. New sections that need to be hidden will have to be added.*/
 $(document).ready(function(){
     console.log(window.localStorage.getItem("gamefont"))
     document.getElementById("p2").style.fontSize=window.localStorage.getItem("gamefont")
@@ -250,7 +287,7 @@ $(document).ready(function(){
 });
 });
 
-/*hide div 3*/
+/*hide Div 3, main body*/
 $(document).ready(function(){
     $("#div3").fadeOut(1)
     $(".div3").fadeOut(1)
@@ -264,37 +301,7 @@ $(document).ready(function(){
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content
 https://www.w3schools.com/howto/howto_js_dropdown.asp */
-function dropfunc() {
-    document.getElementById("bardrop").classList.toggle("show");
-  }
-  
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  } 
 
-
-
-/* map testing*/
-/*var map = document.getElementById('Map');
-map.addEventListener('click', eXFunction, false);*/
-
-function eXFunction(e) {
-  if (e.target !== e.currentTarget) {
-    var clickedBtn = e.target.id;
-    alert("Button: " + clickedBtn);
-  }
-  e.stopPropagation();
-}
 /* PLAYER STATS */
 var playername=""
 /*Set name and start audio*/
@@ -311,13 +318,14 @@ var item = "none"
 window.inventoryI = [
 
 ]
+/* Array of possible, random inventory items. Can be expanded*/
 var possinv = [
     "Sword",
     "Shield",
     "Bones",
     "Gold"
 ]
-console.log(window.inventoryI)
+/*Used to get a random item and add it to the inventory.*/
 function randomcol(number){
     document.getElementById("chest1").onclick = function() {nothing()};
     var number = 0
@@ -328,7 +336,7 @@ function randomcol(number){
     inventoryI.push(item);
     
 }
-
+/*inventory call to see what the player has.*/
 function inventory(){
     console.log(inventoryI)
     window.alert("You have " + inventoryI + " in your inventory." )
@@ -339,7 +347,7 @@ function getinv(){
     var inventoryI = localStorage.getItem("items");
     window.alert("You have " + inventoryI + " in your inventory." )
 }
-
+/*Specific item pickups.*/
 function coinpickup(){
     document.getElementById("coinsfloor").onclick = function() {nothing()};
     window.alert("You found some gold! Item was added to inventory.")

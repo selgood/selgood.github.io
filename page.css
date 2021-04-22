@@ -13,7 +13,7 @@
     align-content: center;
     min-height: 100vh;
 }
-
+/*Help centering items*/
 .centerthis{
     margin: auto;
     display: inline-block;
@@ -28,6 +28,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-weight: bold;
 }
+
 .clsbutton{
   background: rgb(236, 20, 20);
   padding: 10px 24px;
@@ -87,47 +88,6 @@
   visibility: hidden;
 }
 
-/*Sourced from w3schools*/
-/* Dropdown Button
- https://www.w3schools.com/howto/howto_js_dropdown.asp */
- .dropbtn {
-  background: grey;
-  padding: 10px 24px;
-  width: 200px;
-  border-color: black;
-  transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  font-weight: bold;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #ffffff;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
 
 .optionsmenu {
   padding-top: 450px;
@@ -142,9 +102,3 @@
   pointer-events: none;
   display: none;
 }
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} 
