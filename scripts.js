@@ -327,6 +327,8 @@ var possinv = [
 ]
 /*Used to get a random item and add it to the inventory.*/
 function randomcol(number){
+    var coinaudio = new Audio('chest.wav');
+    coinaudio.play()
     document.getElementById("chest1").onclick = function() {nothing()};
     var number = 0
     number = Math.floor(Math.random() * possinv.length)
@@ -352,12 +354,15 @@ function coinpickup(){
     document.getElementById("coinsfloor").onclick = function() {nothing()};
     window.alert("You found some gold! Item was added to inventory.")
     inventoryI.push("Gold")
+    var coinaudio = new Audio('coins.wav');
+    coinaudio.play()
 }
 
 function lanternpickup(){
     document.getElementById("lantern").onclick = function() {nothing()};
     window.alert("You picked up the lit lantern, you attach it to your utility belt. You can now see in dark spaces.")
     inventoryI.push("Lantern")
+    
 }
 
 
