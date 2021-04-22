@@ -46,18 +46,12 @@
 <section class="maingame">
     <div class="navbar">
         <button class="button" onclick="restart()">Restart</button>
-        <div class="dropdown">
-            <!-- <button onclick="dropfunc()" class="dropbtn">Options</button>
-            <div id="bardrop" class="dropdown-content">
-                <a href="">Text Visibility</a>
-                <a href="">Colourblind Mode</a>
-                <a href="">Options Menu</a>
-            </div> -->
-        </div>
     </div>
     <div id="nameinput">
         <form>
-            <h3>In this game, the items and equipment you have found will shape the outcome of your battles. Ensure you are well equipped...</h3>
+            <h3>In this game, the items and equipment you have found will</h3>
+            <h3>shape the outcome of your battles. Ensure you are well equipped...</h3>
+            <h4>Collect additional items by examining the map of the room.</h4>
             <h3>What is your name, Adventurer?</h3>
             <p>I am...</p>
             <input type="text" id="nametext"></input>
@@ -67,9 +61,11 @@
     <div id="div3">
         <p>Welcome, <span id="namepos"></span></p>
         <section>
-            <img src="maptest.png" usemap="#mapstart">
+            <img id ="map" src="maptest.png" usemap="#mapstart">
             <map name="mapstart">
                 <area id="chest1" shape="rect" coords="140, 48, 186, 0" onclick="randomcol()" />
+                <area id="coinsfloor" shape="rect" coords="276, 179, 310, 215" onclick="nothing()" />
+                <area id="lantern" shape="rect" coords="143, 83, 187, 135" onclick="nothing()" />
             </map>
         </section>
         <audio id="ambience" src="ambient.mp3"></audio>
